@@ -1,11 +1,12 @@
-import AppNav from "../compnents/AppNav";
 import CartList from "../compnents/CartList";
+import Layout from "../layout/Layout";
 
 const CartPage = () => {
   return (
     <div>
-      <AppNav />
-      <CartList />
+      <Layout>
+        <CartList />
+      </Layout>
     </div>
   );
 };

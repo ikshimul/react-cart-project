@@ -1,11 +1,12 @@
-import AppNav from "../compnents/AppNav";
 import ProductList from "../compnents/ProductList";
+import Layout from "../layout/Layout";
 
 const ProductPage = () => {
   return (
     <div>
-      <AppNav />
-      <ProductList />
+      <Layout>
+        <ProductList />
+      </Layout>
     </div>
   );
 };

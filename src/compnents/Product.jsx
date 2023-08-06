@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import addToCart from "../utils/addToCart";
+import { toast } from "react-toastify";
 
 /* eslint-disable react/prop-types */
 const Product = ({ product = {} }) => {
@@ -9,14 +10,14 @@ const Product = ({ product = {} }) => {
       addToCart(product.id)
         .then((data) => {
           if (data?.msg === "success") {
-            console.log(data.data);
+            toast.success("Product has been added to your cart");
           }
         })
         .catch();
     } else {
       localStorage.setItem("guest-cart-item", product.id);
+      toast.info("Please loging first");
       navigate("/login");
-      console.log("please loging first");
     }
   };
   return (

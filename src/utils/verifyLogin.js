@@ -11,5 +11,10 @@ export default async function varifyLogin(email, otp) {
   });
   const data = await res.json();
 
-  return data;
+  if (data?.msg === "success") {
+    localStorage.setItem("token", data.data);
+    return true;
+  } else {
+    return false;
+  }
 }
